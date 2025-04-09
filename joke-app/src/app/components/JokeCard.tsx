@@ -18,9 +18,9 @@ interface JokeCardProps {
 
 const JokeCard: React.FC<JokeCardProps> = ({ joke, loading, onGetNewJoke }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 max-w-md w-full">
-      <div className="flex flex-col items-center space-y-4">
-        <h1 className="text-2xl font-bold text-center text-purple-800">Chuck Norris Jokes</h1>
+    <div className="bg-white rounded-xl shadow-lg p-6 max-w-2xl w-full">
+      <div className="flex flex-col items-center space-y-12">
+        <h1 className="text-base font-semibold text-center text-gray-400">Chuck Norris Jokes</h1>
         
         <div className="w-full min-h-[150px] flex items-center justify-center">
           {loading ? (
@@ -32,14 +32,14 @@ const JokeCard: React.FC<JokeCardProps> = ({ joke, loading, onGetNewJoke }) => {
               </div>
             </div>
           ) : (
-            <p className="text-gray-700 text-center">{joke?.value}</p>
+            <p className="text-gray-700 text-center text-4xl">{joke?.value}</p>
           )}
         </div>
         
         <button
           onClick={onGetNewJoke}
           disabled={loading}
-          className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 disabled:bg-purple-400"
+          className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-10 rounded-lg transition-colors duration-200 disabled:bg-purple-400"
         >
           Get Another Joke
         </button>
